@@ -1,14 +1,38 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Christmas Menu Plan
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
+<ion-content padding class="redview">
+  
+<div text-justify>
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+Welcome to my Christmas Menu Event Plan!
+Please, choose your favorite menu and create an instant shopping list.
+
+</p>
+</div>
+
+<br/><br/>
+
+<!--This is my home.html . here i show my buttons. They help me to navigate through my app-->
+
+    <button ion-button full round color="danger" (click)="openMenu1Page()">Traditional Christmas Menu</button>
+  
+  
+    <button ion-button full round color="danger" (click)="openMenu2Page()">Vegetarian Christmas Menu</button>
+  
+
+    <button ion-button full round color="danger" (click)="openMenu3Page()">Seafood Christmas Menu</button>
+  
+
+   <button ion-button full round color="danger" outline (click)="openShoppinglistPage()">Shopping List >> <ion-icon name="basket"></ion-icon> </button>
+
+
+
+  
+  
 </ion-content>

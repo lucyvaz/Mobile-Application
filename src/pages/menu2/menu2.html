@@ -1,0 +1,147 @@
+<!--
+  Generated template for the Menu2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Vegetarian Menu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!--Here I change my page background to red to match the app Christmas concept.
+-->
+<ion-content padding class="rview">
+<h1>Vegetarian Christmas Menu</h1>
+<div text-justify>
+<p>Here you will find a vetegarian menu exclusively selected for this special occasion. </p>
+</div>	
+
+
+<!--I found ion-card useful to separate each recipe, photo, indredients and instructions in only one card.
+-->
+
+<!--Here start a recipe.
+-->
+
+	<ion-card>
+  <img src="../assets/imgs/squash.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Stuffed Roasted Squash
+      </ion-card-title>
+    <p>
+      Ingredients
+    </p>
+
+    <ion-list>
+  <ion-item [ngClass]="{ingredientChosen: theShoppingList.isIngredientSelectedByUser(tOption)}" *ngFor="let tOption of theShoppingList.getingredientMenu2options(); let i = index">
+    <ion-label><b>{{tOption.amount}} {{tOption.ingredientName}}</b>
+    </ion-label>
+    <ion-checkbox [checked] = "theShoppingList.isIngredientSelectedByUser(tOption)" (ionChange)="theShoppingList.addIngredient(tOption)"></ion-checkbox>
+  </ion-item>
+ </ion-list>
+
+<!--Using the ngIf function to show and hide the Instruction Content.
+-->
+<button ion-button color="light"(click)="displayInstruction1()"><b>Instructions</b></button>Click to Display
+<div *ngIf="displayit1"> 
+<div text-justify>
+<p>Preheat the oven to gas 5, 190°C, fan 170°C. Halve the butternut squash vertically and scoop out the seeds with a soup spoon or melon baller. Line a roasting tin large enough to hold both squash halves with nonstick baking paper. Put both halves, cut sides down, in the roasting tin and roast for 50 mins, or until just tender.
+Leave to cool for 15 mins, then carefully turn the halves over and scoop out the insides along the length of each squash half, leaving an even, 3cm border of squash all around the edge. Be careful not to pierce the skin. Reserve the scooped-out squash and season the hollowed-out halves with salt and pepper. While the squash halves cook, put 2 tbsp of the oil from the jarred peppers in a large saucepan set over a medium heat. Add the chopped onion and cook gently for 8 mins or so, stirring often, until soft and just starting to colour. Now add the mushrooms and cook for 5 mins until browned and soft, stirring often. Use a fork or potato masher to break the chestnuts down a little. They should be lightly crushed rather than completely broken down. Add the crushed chestnuts, 2 chopped garlic cloves, paprika and the leaves from 2 thyme sprigs to the pan. Cook through for a minute. Stir in the scooped-out squash, stirring to mix and to break it down evenly. Season well, stir in the finely chopped parsley and remove from the heat. Separately, wash the spinach and drain well. Transfer to a large saucepan and wilt over a medium heat, stirring often. It should take 2-3 mins for the leaves to collapse. Wring out in a clean tea towel to remove excess moisture then season well with salt, pepper and the nutmeg. Use the drained, chargrilled peppers to line the hollowed out squash halves in an even, single layer. Divide the mushroom and chestnut mixture between the halves, pressing it down evenly. Evenly spoon the spinach over the filling in one half of the squash. Put the two halves together to make a butternut squash shape and tie together several times along the length of the squash with kitchen string. Return to the roasting tin. Bake for 20 mins, then add the halved garlic heads to the tin with the remaining thyme sprigs, drizzling them with 1 tbsp oil from the pepper jars. Bake for a further 30-40 mins, until the squash is completely tender and piping hot. To make the pesto, squeeze out the cloves from one halved garlic bulb and add to the small bowl of a food processor with the red chilli, pecans and the roughly chopped parsley. Blitz together, pausing to scrape down the sides. With the motor running, add the remaining oil reserved from the pepper jars in a steady stream. A rough pesto will form. Season with salt and pepper, to taste.
+Slice the squash thickly, discarding the string, and serve with the pesto on the side and the garlic bulbs to decorate.</p>
+</div>
+   </div>
+
+  </ion-card-content>
+</ion-card>
+
+
+<!--Here start a recipe.
+-->
+
+  <ion-card>
+  <img src="../assets/imgs/sweetpotatoe.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Rosemary-Pecan Mashed Sweet Potatoes
+      </ion-card-title>
+    <p>
+      Ingredients
+    </p>
+
+    <ion-list>
+  <ion-item [ngClass]="{ingredientChosen: theShoppingList.isIngredientSelectedByUser(tOption)}" *ngFor="let tOption of theShoppingList.getingredientSide2options(); let i = index">
+    <ion-label><b>{{tOption.amount}} {{tOption.sideingredientName}}</b>
+    </ion-label>
+    <ion-checkbox [checked] = "theShoppingList.isIngredientSelectedByUser(tOption)" (ionChange)="theShoppingList.addIngredient(tOption)"></ion-checkbox>
+  </ion-item>
+ </ion-list>
+
+<!--Using the ngIf function to display and hide the Instruction Content.
+-->
+<button ion-button color="light"(click)="displayInstruction2()"><b>Instructions</b></button>Click to Display
+<div *ngIf="displayit2"> 
+<div text-justify>
+<p>Heat oven to 425°F. Prick sweet potatoes with fork and place on plate. Microwave on High 6 minutes; turn each potato over and cook until soft, 6 minutes more. Let stand until cool enough to handle. Meanwhile, on rimmed baking sheet, toss pecans with oil, then Parmesan, cayenne, 2 teaspoons rosemary and 1⁄2 teaspoon salt. Roast until fragrant, about 3 minutes. Toss with remaining teaspoon of rosemary. Peel potatoes and mash with maple syrup and 1⁄2 teaspoon salt until smooth. Transfer to serving dish and top with pecans. </p>
+</div>
+   </div>
+   
+  </ion-card-content>
+</ion-card>
+
+
+<!--Here start a recipe.
+-->
+
+  <ion-card>
+  <img src="../assets/imgs/fruitcake.jpeg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Festive Christmas Fruit Cake
+      </ion-card-title>
+    <p>
+      Ingredients
+    </p>
+
+    <ion-list>
+  <ion-item [ngClass]="{ingredientChosen: theShoppingList.isIngredientSelectedByUser(tOption)}" *ngFor="let tOption of theShoppingList.getingredientCake2options(); let i = index">
+    <ion-label><b>{{tOption.amount}} {{tOption.cakeingredientName}}</b>
+    </ion-label>
+    <ion-checkbox [checked] = "theShoppingList.isIngredientSelectedByUser(tOption)" (ionChange)="theShoppingList.addIngredient(tOption)"></ion-checkbox>
+  </ion-item>
+ </ion-list>
+
+
+<!--Using the ngIf function to display and hide the Instruction Content.
+-->
+<button ion-button color="light"(click)="displayInstruction3()"><b>Instructions</b></button>Click to Display
+<div *ngIf="displayit3"> 
+<div text-justify>
+<p>Firstly, soak dry fruits in grape juice / alcohol for 2 hours. Furthermore, take warm water, powdered sugar and oil. blend. Further sieve plain flour, baking powder, baking soda, cinnamon powder, nutmeg powder, cardamom powder and salt. Also add orange zest and vanilla extract. Blend till the batter is combined and squeezed dry fruits, almonds and walnuts. gently mix. Further, transfer the cake batter into the cake mould. Bake at 180 degree celsius for 40 minutes. Finally, serve the christmas fruit cake. </p>
+</div>
+   </div>
+   
+
+  </ion-card-content>
+</ion-card>
+
+<!--Here there are my return buttons to home and shopping list
+-->
+
+ <button ion-button icon-start (click)="goToHome()">
+  <ion-icon name="home"></ion-icon>
+  Home
+</button>
+
+
+<button ion-button icon-start (click)="openShoppinglistPage()">
+  <ion-icon name="basket"></ion-icon>
+  Shopping List Page
+</button>
+
+
+</ion-content>

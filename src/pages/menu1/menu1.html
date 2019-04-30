@@ -1,0 +1,177 @@
+<!--
+  Generated template for the Menu1Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Traditional Menu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<!--Here I change my page background to red to match the app Christmas concept.
+-->
+	<ion-content padding class="rview">
+<h1>Traditional Christmas Menu</h1>
+<div text-justify>
+<p>Here you will find a traditional menu exclusively selected for this special occasion. </p>
+</div>	
+
+
+
+<!--I found ion-card useful to separate each recipe, photo, indredients and instructions in only one card.
+-->
+
+<!--Here start a recipe. Here use ion-card which allow me to separate recipe-content (images, ingredients and instructions. 
+-->
+
+	<ion-card>
+  <img src="../assets/imgs/turkey.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Traditional Christmas Turkey
+      </ion-card-title>
+    <p>
+      Ingredients
+    </p>
+
+
+    <!--This is my MENU1PAGE
+Using the *ngfor function to get the Menu 1 Recipe's Ingredients. 
+Here I use the checkbox to create a list of ingredients to display in the MENU1PAGE.
+When the box is clicked, it is checked if the ingredient has
+been selected by user ("isIngredientSelectedByUser"). If the ingredient has
+been selected then the ingredient is added (addIngredient) to the shopping list.
+-->
+
+    <ion-list>
+  <ion-item [ngClass]="{ingredientChosen: theShoppingList.isIngredientSelectedByUser(tOption)}" *ngFor="let tOption of theShoppingList.getingredientMenu1options(); let i = index">
+    <ion-label><b>{{tOption.amount}} {{tOption.ingredientName}}</b>
+    </ion-label>
+    <ion-checkbox [checked] = "theShoppingList.isIngredientSelectedByUser(tOption)" (ionChange)="theShoppingList.addIngredient(tOption)"></ion-checkbox>
+  </ion-item>
+ </ion-list>
+
+<!--This is my MENU1PAGE
+Using the ngIf function to display the Recipe's Instruction/Content.
+-->
+
+<button ion-button color="light"(click)="displayInstruction1()"><b>Instructions</b></button>Click to Display
+<div *ngIf="displayit1"> 
+  <div text-justify>
+  <p>Preheat an oven to 350 degrees F (175 degrees C). Line a turkey roaster with long sheets of aluminum foil that will be long enough to wrap over the turkey. Stir together the parsley, rosemary, sage, thyme, lemon pepper, and salt in a small bowl. Rub the herb mixture into the cavity of the turkey, then stuff with the celery, orange, onion, and carrot. Truss if desired, and place the turkey into the roasting pan. Pour the chicken broth and champagne over the turkey, making sure to get some champagne in the cavity. Bring the aluminum foil over the top of the turkey, and seal. Try to keep the foil from touching the skin of the turkey breast or legs.
+  Bake the turkey in the preheated oven for 2 1/2 to 3 hours until no longer pink at the bone and the juices run clear. Uncover the turkey, and continue baking until the skin turns golden brown, 30 minutes to 1 hour longer. An instant-read thermometer inserted into the thickest part of the thigh, near the bone should read 180 degrees F (82 degrees C). Remove the turkey from the oven, cover with a doubled sheet of aluminum foil, and allow to rest in a warm area 10 to 15 minutes before slicing. </p>
+</div>
+</div>
+
+
+  </ion-card-content>
+</ion-card>
+
+
+<!--Here start a recipe.
+-->
+
+  <ion-card>
+  <img src="../assets/imgs/roastPotatoes.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Crisp Roast Potatoes
+      </ion-card-title>
+    <p>
+      Ingredients
+    </p>
+
+    <ion-list>
+  <ion-item [ngClass]="{ingredientChosen: theShoppingList.isIngredientSelectedByUser(tOption)}" *ngFor="let tOption of theShoppingList.getingredientSide1options(); let i = index">
+    <ion-label><b>{{tOption.amount}} {{tOption.sideingredientName}}</b>
+    </ion-label>
+    <ion-checkbox [checked] = "theShoppingList.isIngredientSelectedByUser(tOption)" (ionChange)="theShoppingList.addIngredient(tOption)"></ion-checkbox>
+  </ion-item>
+ </ion-list>
+
+ <button ion-button color="light"(click)="displayInstruction2()"><b>Instructions</b></button>Click to Display
+<div *ngIf="displayit2"> 
+  <div text-justify>
+    <p>Preheat an oven to 350 degrees F (175 degrees C).
+Grease and lightly flour three 9-inch cake pans.
+Cream the butter and shortening with the sugar until fluffy, about 5 minutes.
+Add the vanilla.
+Add the eg.....</p>
+</div>
+</div>
+
+  </ion-card-content>
+</ion-card>
+
+
+<!--Here start a recipe.
+-->
+
+  <ion-card>
+  <img src="../assets/imgs/cake1.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Traditional Christmas Cake
+      </ion-card-title>
+    <p>
+      Ingredients
+    </p>
+
+    <ion-list>
+  <ion-item [ngClass]="{ingredientChosen: theShoppingList.isIngredientSelectedByUser(tOption)}" *ngFor="let tOption of theShoppingList.getingredientCake1options(); let i = index">
+    <ion-label><b>{{tOption.amount}} {{tOption.cakeingredientName}}</b>
+    </ion-label>
+    <ion-checkbox [checked] = "theShoppingList.isIngredientSelectedByUser(tOption)" (ionChange)="theShoppingList.addIngredient(tOption)"></ion-checkbox>
+  </ion-item>
+ </ion-list>
+
+<button ion-button color="light"(click)="displayInstruction3()"><b>Instructions</b></button>Click to Display
+<div *ngIf="displayit3"> 
+ <div text-justify><p>Preheat an oven to 350 degrees F (175 degrees C).
+Grease and lightly flour three 9-inch cake pans.
+Cream the butter and shortening with the sugar until fluffy, about 5 minutes.
+Add the vanilla.
+Add the egg yolks one at a time, beating between each new addition.
+Add the baking soda and mix.
+Add the flour and whole milk alternately, beginning and ending with milk.
+By hand, mix in the coconut and nuts.
+In a clean mixing bowl whip the egg whites to stiff peaks.
+Gently fold the egg whites into the batter.
+Pour the batter into the prepared pans and bake for 25 minutes.
+Cool completely before assembling and frosting.
+For the curd:
+In a small bowl, whisk together the eggs and set aside
+Bring the cranberries, sugar, orange juice and peel to boil over medium heat. Stirring occasionally until the cranberries burst
+Carefully pour the mixture into a sieve or small strainer placed over a large bowl
+Press the mixture into a bowl until mostly pulp and peel remains
+While still hot, whisk the butter into pressed liquid
+Remove 1 cup of liquid and whisk it into the eggs to temper
+Slowly whisk the tempered eggs into the remaining cranberry liquid..</p>
+</div>
+</div>
+
+  </ion-card-content>
+</ion-card>
+
+<!--Here there are my return buttons to home and shopping list
+-->
+
+ <button ion-button icon-start (click)="goToHome()">
+  <ion-icon name="home"></ion-icon>
+  Home
+</button>
+
+
+<button ion-button icon-start (click)="openShoppinglistPage()">
+  <ion-icon name="basket"></ion-icon>
+  Shopping List Page
+</button>
+
+
+
+</ion-content>

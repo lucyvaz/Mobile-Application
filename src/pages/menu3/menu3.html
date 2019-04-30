@@ -1,0 +1,148 @@
+<!--
+  Generated template for the Menu3Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Seafood Menu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!--Here I change my page background to red to match the app Christmas concept.
+-->
+
+<ion-content padding class="rview">
+<h1>Seafood Christmas Menu</h1>
+<div text-justify>
+<p>Here you will find an alternative seafood festive menu exclusively selected for this special occasion.</p>
+</div>  
+
+<!--I found ion-card useful to separate each recipe, photo, indredients and instructions in only one card.
+-->
+
+<!--Here start a recipe.
+-->
+  <ion-card>
+  <img src="../assets/imgs/lobster1.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Christmas Baked Stuffed Lobsters
+      </ion-card-title>
+    <p>
+      Ingredients
+    </p>
+
+    <ion-list>
+  <ion-item [ngClass]="{ingredientChosen: theShoppingList.isIngredientSelectedByUser(tOption)}" *ngFor="let tOption of theShoppingList.getingredientMenu3options(); let i = index">
+    <ion-label><b>{{tOption.amount}} {{tOption.ingredientName}}</b>
+    </ion-label>
+    <ion-checkbox [checked] = "theShoppingList.isIngredientSelectedByUser(tOption)" (ionChange)="theShoppingList.addIngredient(tOption)"></ion-checkbox>
+  </ion-item>
+ </ion-list>
+
+
+<!--Using the ngIf function to show and hide the Instruction Content.
+-->
+<button ion-button color="light"(click)="displayInstruction1()"><b>Instructions</b></button>Click to Display
+<div *ngIf="displayit1">
+<div text-justify>
+<p>Preheat oven to 425°F.
+Prepare lobsters for stuffing. Cut open the lobster by inserting your knife just underneath the head and the cutting down, splitting the belly (body and tail). Remove the “inners” (heart, guts, etc., but not meat). Rinse lobster under cold water. Lightly season inside of lobsters with salt and pepper. In a medium size skillet over medium high heat, melt clarified butter. Add shallot, celery red pepper and lemon seasoning.  Saute until soft, about 10 minutes. Deglaze vegetables with wine, sherry and lemon juice.  Cook and additional 5 minutes over low heat. Remove pan from stove. Add remaining ingredients and mix until well combined. Place lobsters on baking sheet and stuff inside with stuffing. Drizzle each lobster with 2 tablespoons of remaining clarified butter. Place in preheated oven and bake 15-20 minutes, or until the tail reaches an internal temperature of 140° on an instant-read thermometer.
+</p>
+</div>
+</div>
+   
+
+  </ion-card-content>
+</ion-card>
+
+<!--Here start a recipe.
+-->
+
+  <ion-card>
+  <img src="../assets/imgs/roastedpotatoes.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Roast Potatoes with onion, herbs and chilli
+      </ion-card-title>
+    <p>
+      Ingredients
+    </p>
+
+    <ion-list>
+  <ion-item [ngClass]="{ingredientChosen: theShoppingList.isIngredientSelectedByUser(tOption)}" *ngFor="let tOption of theShoppingList.getingredientSide3options(); let i = index">
+    <ion-label><b>{{tOption.amount}} {{tOption.sideingredientName}}</b>
+    </ion-label>
+    <ion-checkbox [checked] = "theShoppingList.isIngredientSelectedByUser(tOption)" (ionChange)="theShoppingList.addIngredient(tOption)"></ion-checkbox>
+  </ion-item>
+ </ion-list>
+
+<!--Using the ngIf function to show and hide the Instruction Content.
+-->
+<button ion-button color="light"(click)="displayInstruction2()"><b>Instructions</b></button>Click to Display
+<div *ngIf="displayit2"> 
+<div text-justify>
+<p>Preheat the oven to 200°C. Prick the whole potatoes all over with a fork. Place on a baking tray, then roast in the oven for 1 hour until cooked. Remove the tray from the oven (leaving the oven on) and allow to cool slightly. Once cool enough to handle, tear the potatoes into 3cm chunks. Return the potato chunks to the baking tray and scatter with the sliced onion, rosemary, thyme, chilli flakes and garlic. Drizzle with the extra virgin olive oil and toss well to combine. Dot with pieces of butter and season with plenty of sea salt and freshly ground black pepper. Roast the potatoes on the top shelf of the oven for 15-20 minutes, turning regularly, until crisp and golden.</p>
+</div>
+   </div>
+
+  </ion-card-content>
+</ion-card>
+
+
+<!--Here start a recipe.
+-->
+  <ion-card>
+  <img src="../assets/imgs/triffle.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Christmas Fruit Triffle
+      </ion-card-title>
+    <p>
+      Ingredients
+    </p>
+
+    <ion-list>
+  <ion-item [ngClass]="{ingredientChosen: theShoppingList.isIngredientSelectedByUser(tOption)}" *ngFor="let tOption of theShoppingList.getingredientCake3options(); let i = index">
+    <ion-label><b>{{tOption.amount}} {{tOption.cakeingredientName}}</b>
+    </ion-label>
+    <ion-checkbox [checked] = "theShoppingList.isIngredientSelectedByUser(tOption)" (ionChange)="theShoppingList.addIngredient(tOption)"></ion-checkbox>
+  </ion-item>
+ </ion-list>
+
+<!--Using the ngIf function to show and hide the Instruction Content.
+-->
+<button ion-button color="light"(click)="displayInstruction3()"><b>Instructions</b></button>Click to Display
+<div *ngIf="displayit3"> 
+<div text-justify>
+<p>Bring first 3 ingredients to a simmer in a saucepan, and cook, stirring occasionally, 6 minutes or until sugar dissolves and orange juice is reduced by half. Remove from heat, and cool 15 minutes. Cover and chill until ready to use, or refrigerate in an airtight container up to 4 days. Whisk together milk and next 3 ingredients in a saucepan over medium-low heat, and cook, whisking occasionally, 2 to 3 minutes or until sugar dissolves. Remove from heat. Whisk together egg yolks and next 2 ingredients in a medium bowl until smooth. Gradually whisk 1/2 cup milk mixture into egg yolk mixture, whisking constantly until smooth. Pour yolk mixture into warm milk mixture in pan, whisking until blended. Cook over medium-high heat, whisking constantly, 3 to 5 minutes or until mixture thickens and begins to bubble. Transfer to a bowl, and place plastic wrap directly on mixture (to prevent film from forming). Chill 30 minutes to 3 days. Cut pound cake into 1-inch cubes. Layer one-third cake cubes in a 5-qt. trifle dish. Top with one-third each orange pastry cream, cranberry mixture, and whipped cream. Repeat layers twice. Serve immediately, or cover and chill up to 24 hours.</p>
+</div>
+</div>
+   
+
+  </ion-card-content>
+</ion-card>
+
+
+<!--Here there are my return buttons to home and shopping list
+-->
+
+ <button ion-button icon-start (click)="goToHome()">
+  <ion-icon name="home"></ion-icon>
+  Home
+</button>
+
+
+<button ion-button icon-start (click)="openShoppinglistPage()">
+  <ion-icon name="basket"></ion-icon>
+  Shopping List Page
+</button>
+
+
+
+
+</ion-content>

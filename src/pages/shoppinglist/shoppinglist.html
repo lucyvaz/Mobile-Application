@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ShoppinglistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Shopping List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="blueview">
+
+		<h3 style="color:green;">Here is your Shopping List!</h3>
+<div text-justify text-wrap>
+<p>Remember you can delete any item by clicking on the trash icon or reset all your list.  </p>
+</div>
+
+
+<h2 style="color:red;">Current Shopping List</h2>
+<div text-justify text-wrap>
+
+</div>
+
+
+<!--Shoppinglist.html
+Here I use the ngFor to get user selected ingredients from one or many menus available.
+and I show them in only one array/shopping list. 
+I also provide the option of deleting  each ingredient/item individually by clicking the icon trash
+-->
+
+<ion-list inset>
+  <ion-item  *ngFor="let ingredient of theShoppingList.getUserSelectedIngredients(); let i = index">
+    <ion-icon name="ingredient" item-start></ion-icon>
+    <ion-label>{{i+1}}: <b>{{ingredient.ingredientName}}</b> <b>{{ingredient.sideingredientName}}</b>  <b>{{ingredient.cakeingredientName}}</b> ;
+    <ion-icon name="ios-trash-outline" (click)="deleteThisIngredient(ingredient)"></ion-icon>
+</ion-label>
+   </ion-item>
+ </ion-list> 
+
+
+<!--This is the Shoppinglist.html
+The button start over reset my shopping list
+-->
+
+<button ion-button icon-start color = "danger" (click)="StartOver()">
+  <ion-icon name="basket"></ion-icon>
+  Start Again Shopping List
+</button>
+
+ <button ion-button icon-start (click)="goToHome()">
+  <ion-icon name="home"></ion-icon>
+  Go Home
+</button>
+
+<!--<ion-icon name="home" (click)="goToHome()"></ion-icon>
+-->
+  
+
+</ion-content>
